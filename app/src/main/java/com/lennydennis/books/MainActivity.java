@@ -9,9 +9,12 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.lennydennis.books.Models.Book;
+
 import org.w3c.dom.Text;
 
 import java.net.URL;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -60,7 +63,14 @@ public class MainActivity extends AppCompatActivity {
                 tvResult.setVisibility(View.VISIBLE);
                 tvError.setVisibility(View.INVISIBLE);
             }
-            tvResult.setText(result);
+            
+            ArrayList<Book> books = ApiUtil.getBooksFromJson(result);
+            String resultString= "";
+            for(Book book: books){
+                resultString = resultString + book.title+"\n"+
+                        book.publishedDate+"\n\n";
+            }
+            tvResult.setText(resultString);
 
         }
 
