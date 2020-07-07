@@ -5,4 +5,5 @@
     <string name="publisher">TextView</string>
     <string name="authors">TextView</string>
     <string name="title">TextView</string>
+    <string name="search">Search</string>
 </resources>
