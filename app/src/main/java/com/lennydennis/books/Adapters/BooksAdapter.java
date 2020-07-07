@@ -1,6 +1,7 @@
 package com.lennydennis.books.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.lennydennis.books.Models.Book;
 import com.lennydennis.books.R;
+import com.lennydennis.books.UI.BookDetailActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -70,6 +72,17 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BookViewHold
             authors = itemView.findViewById(R.id.tv_authors);
             date = itemView.findViewById(R.id.published_date);
             publisher = itemView.findViewById(R.id.tv_publisher);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    Book bookClicked = mBooks.get(position);
+                    Intent intent = new Intent(v.getContext(), BookDetailActivity.class);
+                    intent.putExtra("Book",bookClicked);
+                    v.getContext().startActivity(intent);
+                }
+            });
         }
 
 

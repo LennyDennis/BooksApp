@@ -1,4 +1,4 @@
-package com.lennydennis.books;
+package com.lennydennis.books.Utils;
 
 import android.net.Uri;
 import android.util.Log;

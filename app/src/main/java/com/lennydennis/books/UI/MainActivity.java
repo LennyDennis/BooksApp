@@ -1,4 +1,4 @@
-package com.lennydennis.books;
+package com.lennydennis.books.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.MenuItemCompat;
@@ -12,15 +12,14 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.lennydennis.books.Adapters.BooksAdapter;
+import com.lennydennis.books.Utils.ApiUtil;
 import com.lennydennis.books.Models.Book;
-
-import org.w3c.dom.Text;
+import com.lennydennis.books.R;
 
 import java.net.URL;
 import java.util.ArrayList;
