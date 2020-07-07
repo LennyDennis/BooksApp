@@ -1,14 +1,19 @@
 package com.lennydennis.books;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.lennydennis.books.Adapters.BooksAdapter;
 import com.lennydennis.books.Models.Book;
 
 import org.w3c.dom.Text;
@@ -19,12 +24,16 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private ProgressBar mLoadingProgress;
+    private RecyclerView mRecyclerView;
+    private Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mLoadingProgress = findViewById(R.id.pb_loading);
+        mRecyclerView = findViewById(R.id.books_recyclerview);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         try {
             URL bookUrl = ApiUtil.buildUrl("cooking");
@@ -53,24 +62,19 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
-            TextView tvResult = findViewById(R.id.tv_response);
             TextView tvError = findViewById(R.id.tv_error);
             mLoadingProgress.setVisibility(View.INVISIBLE);
             if(result == null){
-                tvResult.setVisibility(View.INVISIBLE);
+                mRecyclerView.setVisibility(View.INVISIBLE);
                 tvError.setVisibility(View.VISIBLE);
             }else{
-                tvResult.setVisibility(View.VISIBLE);
+                mRecyclerView.setVisibility(View.VISIBLE);
                 tvError.setVisibility(View.INVISIBLE);
             }
             
             ArrayList<Book> books = ApiUtil.getBooksFromJson(result);
-            String resultString= "";
-            for(Book book: books){
-                resultString = resultString + book.title+"\n"+
-                        book.publishedDate+"\n\n";
-            }
-            tvResult.setText(resultString);
+            BooksAdapter booksAdapter = new BooksAdapter(books, mContext);
+            mRecyclerView.setAdapter(booksAdapter);
 
         }
 

@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Books</string>
     <string name="error_data_message">Error loading data from Google API book</string>
+    <string name="published_date">TextView</string>
+    <string name="publisher">TextView</string>
+    <string name="authors">TextView</string>
+    <string name="title">TextView</string>
 </resources>

@@ -9,14 +9,13 @@
         android:layout_height="match_parent"
         android:layout_margin="5dp"
         android:padding="10dp"
-        app:cardCornerRadius="5dp"
-        app:cardElevation="5dp">
+        app:cardCornerRadius="5dp">
 
         <RelativeLayout
             android:id="@+id/relative_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="5dp">
+            android:padding="5dp"
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/book_image"
