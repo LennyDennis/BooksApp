@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 import com.lennydennis.books.Adapters.BooksAdapter;
 import com.lennydennis.books.Utils.ApiUtil;
-import com.lennydennis.books.Models.Book;
+import com.lennydennis.books.models.Book;
 import com.lennydennis.books.R;
 
 import java.net.URL;
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                 mRecyclerView.setVisibility(View.VISIBLE);
                 tvError.setVisibility(View.INVISIBLE);
             }
-            
+
             ArrayList<Book> books = ApiUtil.getBooksFromJson(result);
             BooksAdapter booksAdapter = new BooksAdapter(books, mContext);
             mRecyclerView.setAdapter(booksAdapter);

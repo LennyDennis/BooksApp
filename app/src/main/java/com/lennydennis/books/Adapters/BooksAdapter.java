@@ -10,12 +10,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.lennydennis.books.Models.Book;
+import com.lennydennis.books.models.Book;
 import com.lennydennis.books.R;
 import com.lennydennis.books.UI.BookDetailActivity;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BookViewHolder> {
 
@@ -37,18 +36,9 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BookViewHold
     @Override
     public void onBindViewHolder(@NonNull BookViewHolder holder, int position) {
         Book book = mBooks.get(position);
-        String authors = "";
-        int i=0;
-        for (String author:book.authors){
-            authors+=author;
-            i++;
-            if(i<book.authors.length){
-                authors += ", ";
-            }
-        }
 
         holder.title.setText(book.title);
-        holder.authors.setText(authors);
+        holder.authors.setText(book.authors);
         holder.publisher.setText(book.publisher);
         holder.date.setText(book.publishedDate);
     }
