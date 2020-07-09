@@ -22,6 +22,5 @@ public class BookDetailActivity extends AppCompatActivity {
         mBookDetailBinding = DataBindingUtil.setContentView(this,R.layout.activity_book_detail);
         mBookDetailBinding.setBook(book);
 
-
     }
 }
