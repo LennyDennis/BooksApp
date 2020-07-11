@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UI.SearchActivity">
+
+    <EditText
+        android:id="@+id/search_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/search_title"
+        android:layout_marginLeft="@dimen/search_margin"
+        android:layout_marginRight="@dimen/search_margin"
+        android:layout_marginTop="@dimen/search_margin"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/search_author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/search_author"
+        android:inputType="textPersonName"
+        android:layout_marginLeft="@dimen/search_margin"
+        android:layout_marginRight="@dimen/search_margin"
+        android:layout_marginTop="@dimen/search_margin" />
+
+    <EditText
+        android:id="@+id/search_publisher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/search_publisher"
+        android:inputType="textPersonName"
+        android:layout_marginLeft="@dimen/search_margin"
+        android:layout_marginRight="@dimen/search_margin"
+        android:layout_marginTop="@dimen/search_margin" />
+
+    <EditText
+        android:id="@+id/search_isbn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/search_isbn"
+        android:inputType="textPersonName"
+        android:layout_marginLeft="@dimen/search_margin"
+        android:layout_marginRight="@dimen/search_margin"
+        android:layout_marginTop="@dimen/search_margin" />
+
+    <Button
+        android:id="@+id/button_search"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/search_margin"
+        android:background="@drawable/button_shape"
+        android:textSize="18sp"
+        android:paddingRight="@dimen/search_margin"
+        android:paddingLeft="@dimen/search_margin"
+        android:text="@string/search_button" />
+
+</LinearLayout>

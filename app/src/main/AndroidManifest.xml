@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UI.BookDetailActivity"></activity>
+        <activity android:name=".UI.SearchActivity"></activity>
+        <activity android:name=".UI.BookDetailActivity" />
         <activity android:name=".UI.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

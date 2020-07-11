@@ -74,26 +74,31 @@ public class Book implements Parcelable {
 
     @BindingAdapter({"android:imageUrl"})
     public static void loadImage(final ImageView view, final String imageUrl){
-        Picasso.get()
-                .load(imageUrl)
-                .placeholder(R.drawable.ic_baseline_library_books_24)
-                .into(view, new Callback() {
-                    @Override
-                    public void onSuccess() {
+        if(!imageUrl.isEmpty()){
+            Picasso.get()
+                    .load(imageUrl)
+                    .placeholder(R.drawable.ic_baseline_library_books_24)
+                    .into(view, new Callback() {
+                        @Override
+                        public void onSuccess() {
 
-                    }
+                        }
 
-                    @Override
-                    public void onError(Exception e) {
-                        String updatedImageUrl;
-                        if(imageUrl.contains("https")){
-                            updatedImageUrl = imageUrl.replace("https", "http");
-                        }else{
-                            updatedImageUrl = imageUrl.replace("http", "https");
+                        @Override
+                        public void onError(Exception e) {
+                            String updatedImageUrl;
+                            if(imageUrl.contains("https")){
+                                updatedImageUrl = imageUrl.replace("https", "http");
+                            }else{
+                                updatedImageUrl = imageUrl.replace("http", "https");
+                            }
+                            loadImage(view, updatedImageUrl);
                         }
-                        loadImage(view, updatedImageUrl);
-                        }
-                });
+                    });
+        }else {
+            view.setBackgroundResource(R.drawable.ic_baseline_library_books_24);
+        }
+
 
     }
 }

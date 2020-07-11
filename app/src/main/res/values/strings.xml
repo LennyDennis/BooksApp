@@ -6,4 +6,11 @@
     <string name="authors">TextView</string>
     <string name="title">TextView</string>
     <string name="search">Search</string>
+    <string name="search_title">Search title</string>
+    <string name="search_author">Search Author</string>
+    <string name="search_publisher">Search Publisher</string>
+    <string name="search_isbn">Search ISBN</string>
+    <string name="search_button">Search</string>
+    <string name="advanced_search">Advanced Search</string>
+    <string name="search_validity">Please fill all fields</string>
 </resources>
